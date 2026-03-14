@@ -2,7 +2,7 @@
 
 Welcome to the Hexadecimal TDD Calculator Course repository! This project serves as an online course package designed to teach intermediate web development techniques and strategies, specifically focusing on Test-Driven Development (TDD).
 
-[Video Drve Link](https://drive.google.com/drive/folders/1jTYDkCmpLMKvcwk9sc6p1O5moAHVY3H9)
+[Video Drive Link](https://drive.google.com/drive/folders/1jTYDkCmpLMKvcwk9sc6p1O5moAHVY3H9)
 
 ## Project Overview
 This repository contains the codebase and tutorial branches for building an online calculator application using a Test-Driven Development model. 
