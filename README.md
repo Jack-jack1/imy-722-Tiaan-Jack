@@ -1,5 +1,5 @@
 # Hexadecimal TDD Calculator Course
-
+## Jack Bawden u23529068 Tiann Bosman u22704958
 Welcome to the Hexadecimal TDD Calculator Course repository! This project serves as an online course package designed to teach intermediate web development techniques and strategies, specifically focusing on Test-Driven Development (TDD).
 
 ## Project Overview
