@@ -38,6 +38,7 @@ function storeOperator(state, op) {
   return { ...state, operator: op };
 }
 
+
 function add(a, b) {
   return decimalToHex(hexToDecimal(a) + hexToDecimal(b));
 }
