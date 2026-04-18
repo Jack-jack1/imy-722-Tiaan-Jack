@@ -167,3 +167,39 @@ describe('OPERATIONS', () => {
   });
 
 });
+
+describe('4. OUTPUT DISPLAY REQUIREMENTS', () => {
+  test('caps output at 4 digits (FFFF)', () => {
+    expect(decimalToHex(70000)).toBe('FFFF');
+  });
+});
+
+describe('5. USER INTERFACE REQUIREMENTS', () => {
+  test('backspace logic removes the last character', () => {
+    expect(applyBackspace('1F')).toBe('1');
+  });
+
+  test('clear logic resets input to an empty string', () => {
+    expect(clearInput()).toBe('');
+  });
+});
+
+describe('6. VALIDATION & ERROR HANDLING', () => {
+  test('prevents negative results (returns 0)', () => {
+    expect(subtract('A', 'F')).toBe('0');
+  });
+
+
+
+
+  
+  test('prevents decimal places (rounds down)', () => {
+    
+    expect(divide('F', '2')).toBe('7');
+  });
+
+  test('calculate dispatcher handles all operators', () => {
+    const state = { firstNumber: 'A', secondNumber: '2', operator: '*' };
+    expect(calculate(state)).toBe('14');
+  });
+});
