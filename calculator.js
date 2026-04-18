@@ -1,8 +1,9 @@
 function isValidHexChar(char) {
-  return /^[0-9A-F]$/.test(char);
+  return /^[0-9A-F]$/i.test(char);
 }
 
 function isValidHexInput(str) {
+  
   return str.length <= 2 && str.split('').every(isValidHexChar);
 }
 
@@ -19,7 +20,10 @@ function hexToDecimal(hex) {
 }
 
 function decimalToHex(dec) {
-  return dec.toString(16).toUpperCase();
+  if(dec < 0) return "0"
+  const cappedValue = Math.min(dec, 0xFFFF);
+  
+  return cappedValue.toString(16).toUpperCase();
 }
 
 function storeFirstNumber(state, val) {
@@ -34,12 +38,15 @@ function storeOperator(state, op) {
   return { ...state, operator: op };
 }
 
+
 function add(a, b) {
   return decimalToHex(hexToDecimal(a) + hexToDecimal(b));
 }
 
 function subtract(a, b) {
-  return decimalToHex(hexToDecimal(a) - hexToDecimal(b));
+  const res = hexToDecimal(a) - hexToDecimal(b);
+
+  return decimalToHex(res);
 }
 
 function multiply(a, b) {
@@ -47,15 +54,23 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  return decimalToHex(Math.floor(hexToDecimal(a) / hexToDecimal(b)));
+  const valB = hexToDecimal(b);
+  if (valB === 0) return "0"; 
+  
+
+  const res = Math.floor(hexToDecimal(a) / valB);
+  return decimalToHex(res);
 }
 
 function calculate(state) {
+  if (!state.firstNumber || !state.secondNumber || !state.operator) return "0";
+
   switch (state.operator) {
     case '+': return add(state.firstNumber, state.secondNumber);
     case '-': return subtract(state.firstNumber, state.secondNumber);
     case '*': return multiply(state.firstNumber, state.secondNumber);
     case '/': return divide(state.firstNumber, state.secondNumber);
+    default: return "0";
   }
 }
 
