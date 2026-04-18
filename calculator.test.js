@@ -185,6 +185,7 @@ describe('5. USER INTERFACE REQUIREMENTS', () => {
 });
 
 describe('6. VALIDATION & ERROR HANDLING', () => {
+  
   test('prevents negative results (returns 0)', () => {
     expect(subtract('A', 'F')).toBe('0');
   });
@@ -192,7 +193,7 @@ describe('6. VALIDATION & ERROR HANDLING', () => {
 
 
 
-  
+
   test('prevents decimal places (rounds down)', () => {
     
     expect(divide('F', '2')).toBe('7');

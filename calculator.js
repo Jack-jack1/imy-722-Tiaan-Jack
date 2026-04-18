@@ -20,11 +20,7 @@ function hexToDecimal(hex) {
 }
 
 function decimalToHex(dec) {
-  
-  if (dec < 0) return "0";
-  
-  
-
+  if(dec < 0) return "0"
   const cappedValue = Math.min(dec, 0xFFFF);
   
   return cappedValue.toString(16).toUpperCase();
@@ -48,6 +44,7 @@ function add(a, b) {
 
 function subtract(a, b) {
   const res = hexToDecimal(a) - hexToDecimal(b);
+
   return decimalToHex(res);
 }
 
