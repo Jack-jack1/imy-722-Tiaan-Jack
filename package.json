@@ -1,0 +1,25 @@
+{
+  "name": "imy-722-tiaan-jack",
+  "version": "1.0.0",
+  "description": "Welcome to the Hexadecimal TDD Calculator Course repository! This project serves as an online course package designed to teach intermediate web development techniques and strategies, specifically focusing on Test-Driven Development (TDD).",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jack-jack1/imy-722-Tiaan-Jack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jack-jack1/imy-722-Tiaan-Jack/issues"
+  },
+  "homepage": "https://github.com/Jack-jack1/imy-722-Tiaan-Jack#readme",
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "test": "^3.3.0"
+  }
+}
