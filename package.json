@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Jack-jack1/imy-722-Tiaan-Jack#readme",
   "devDependencies": {
     "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
     "test": "^3.3.0"
   }
 }
