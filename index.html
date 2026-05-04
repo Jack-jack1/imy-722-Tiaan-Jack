@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hex Calculator — Tutorial Edition</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/calculator.css" />
+
+  <!-- Calculator logic (pure functions, also used by Jest tests) -->
+  <script src="js/calculator.js"></script>
+</head>
+<body>
+  <main class="calculator" aria-label="Hexadecimal calculator">
+
+    <!-- 1. Display -->
+    <section class="display">
+      <div class="display-meta">
+        <span>HEX</span>
+        <span id="op-indicator">&nbsp;</span>
+      </div>
+      <div class="display-main" id="display" data-testid="display">0</div>
+    </section>
+
+    <!-- 2. Keypad — buttons are static so they are easy to read -->
+    <section class="keypad" id="keypad">
+      <!-- Row 1: utilities + ops -->
+      <button class="btn util" data-action="clear" data-testid="key-clear">AC</button>
+      <button class="btn util" data-action="back"  data-testid="key-back">←</button>
+      <button class="btn op"   data-op="/"          data-testid="key-divide">÷</button>
+      <button class="btn op"   data-op="*"          data-testid="key-multiply">×</button>
+
+      <!-- Row 2 -->
+      <button class="btn hex" data-key="A" data-testid="key-A">A</button>
+      <button class="btn num" data-key="7" data-testid="key-7">7</button>
+      <button class="btn num" data-key="8" data-testid="key-8">8</button>
+      <button class="btn num" data-key="9" data-testid="key-9">9</button>
+
+      <!-- Row 3 -->
+      <button class="btn hex" data-key="B" data-testid="key-B">B</button>
+      <button class="btn num" data-key="4" data-testid="key-4">4</button>
+      <button class="btn num" data-key="5" data-testid="key-5">5</button>
+      <button class="btn num" data-key="6" data-testid="key-6">6</button>
+
+      <!-- Row 4 -->
+      <button class="btn hex" data-key="C" data-testid="key-C">C</button>
+      <button class="btn num" data-key="1" data-testid="key-1">1</button>
+      <button class="btn num" data-key="2" data-testid="key-2">2</button>
+      <button class="btn num" data-key="3" data-testid="key-3">3</button>
+
+      <!-- Row 5 -->
+      <button class="btn hex" data-key="D" data-testid="key-D">D</button>
+      <button class="btn num zero" data-key="0" data-testid="key-0">0</button>
+      <button class="btn op" data-op="-" data-testid="key-subtract">−</button>
+
+      <!-- Row 6 -->
+      <button class="btn hex" data-key="E" data-testid="key-E">E</button>
+      <button class="btn hex" data-key="F" data-testid="key-F">F</button>
+      <button class="btn op" data-op="+" data-testid="key-add">+</button>
+      <button class="btn equals" data-action="equals" data-testid="key-equals">=</button>
+    </section>
+  </main>
+
+  <!-- GUI controller wires the buttons to calculator.js -->
+  <script src="js/gui.js"></script>
+</body>
+</html>
