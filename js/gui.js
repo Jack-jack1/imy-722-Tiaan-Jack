@@ -1,10 +1,3 @@
-/* =====================================================================
-   gui.js — Wires the buttons in index.html to calculator.js.
-
-   This file ONLY handles user input and rendering. All maths lives in
-   calculator.js so it can be unit-tested without a browser.
-   ===================================================================== */
-
 (function () {
   const C = window.Calculator;
 
@@ -38,7 +31,6 @@
     display.textContent = msg;
     display.classList.add('error');
   }
-
   /* === Button handlers ================================================ */
 
   function pressDigit(ch) {
@@ -105,6 +97,19 @@
     else if (btn.dataset.action === 'equals') pressEquals();
     else if (btn.dataset.action === 'back')   pressBack();
     else if (btn.dataset.action === 'clear')  pressClear();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const key = e.key.toUpperCase();
+    if ('0123456789ABCDEF'.includes(key) && key.length === 1) { e.preventDefault(); pressDigit(key); }
+    else if (key === '+')         { e.preventDefault(); pressOperator('+'); }
+    else if (key === '-')         { e.preventDefault(); pressOperator('-'); }
+    else if (key === '*')         { e.preventDefault(); pressOperator('*'); }
+    else if (key === '/')         { e.preventDefault(); pressOperator('/'); }
+    else if (key === 'ENTER' || e.key === '=') { e.preventDefault(); pressEquals(); }
+    else if (key === 'BACKSPACE') { e.preventDefault(); pressBack(); }
+    else if (key === 'ESCAPE' || key === 'DELETE') { e.preventDefault(); pressClear(); }
   });
 
   // Test hook so automated tests can drive the GUI
